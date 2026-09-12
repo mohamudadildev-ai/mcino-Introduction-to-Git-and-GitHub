@@ -1,4 +1,10 @@
-$ curl -s https://api.github.com/repos/mohamudadildev-ai/mcino-Introduction-to-Git-and-GitHub | jq -r '.parent.full_name, .parent.clone_url, .fork'
-ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub
-https://github.com/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub.git
-true
+$ curl -s https://api.github.com/repos/mohamudadildev-ai/mcino-Introduction-to-Git-and-GitHub | jq '{full_name, fork, parent: {full_name: .parent.full_name, clone_url: .parent.clone_url, html_url: .parent.html_url}}'
+{
+  "full_name": "mohamudadildev-ai/mcino-Introduction-to-Git-and-GitHub",
+  "fork": true,
+  "parent": {
+    "full_name": "ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub",
+    "clone_url": "https://github.com/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub.git",
+    "html_url": "https://github.com/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub"
+  }
+}

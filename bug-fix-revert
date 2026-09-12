@@ -1,5 +1,14 @@
-$ curl -s https://api.github.com/repos/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub/pulls/11318 | jq -r '.state, .head.ref, .head.repo.full_name, .head.repo.clone_url'
-open
-bug-fix-revert
-mohamudadildev-ai/mcino-Introduction-to-Git-and-GitHub
-https://github.com/mohamudadildev-ai/mcino-Introduction-to-Git-and-GitHub.git
+$ curl -s https://api.github.com/repos/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub/pulls/11318 | jq '{number, state, html_url, head: {ref: .head.ref, repo: {full_name: .head.repo.full_name, clone_url: .head.repo.clone_url, fork: .head.repo.fork}}}'
+{
+  "number": 11318,
+  "state": "closed",
+  "html_url": "https://github.com/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub/pull/11318",
+  "head": {
+    "ref": "bug-fix-revert",
+    "repo": {
+      "full_name": "mohamudadildev-ai/mcino-Introduction-to-Git-and-GitHub",
+      "clone_url": "https://github.com/mohamudadildev-ai/mcino-Introduction-to-Git-and-GitHub.git",
+      "fork": true
+    }
+  }
+}
